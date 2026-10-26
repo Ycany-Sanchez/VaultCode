@@ -1,4 +1,4 @@
-# 🛡️ VaultCode — Cyberpunk Vault-Cracking Protocol
+# VaultCode — Vault-Cracking Protocol
 
 [![.NET 8.0](https://img.shields.io/badge/.NET-8.0-512bd4?style=flat-square&logo=dotnet)](https://dotnet.microsoft.com/)
 [![Blazor WebAssembly](https://img.shields.io/badge/Blazor-WebAssembly-512bd4?style=flat-square&logo=blazor)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
@@ -13,7 +13,7 @@ Infiltrate Neo-Veridia Megabank's encrypted cold storage mainframe. Deduce the r
 
 ---
 
-## 🎮 Decryption Rules & How Features Work
+## Decryption Rules & How Features Work
 
 ### 1. Step-by-Step Game Loop
 1. **Choose Clearance Level**:
@@ -41,7 +41,7 @@ Infiltrate Neo-Veridia Megabank's encrypted cold storage mainframe. Deduce the r
 
 ---
 
-## 🖥️ The 4 Implemented Screens
+## The 4 Implemented Screens
 
 1. **Screen 1 — Home / Landing Page (`/`)**:
    - Cyber-heist hero section with dynamic glitch badges, animated vault card preview, and floating security clearance badges.
@@ -70,7 +70,7 @@ Infiltrate Neo-Veridia Megabank's encrypted cold storage mainframe. Deduce the r
 
 ---
 
-## 🧱 OOP Domain Models Reference Table
+## OOP Domain Models Reference Table
 
 All domain models reside cleanly under the `VaultCode.Models` namespace in the `Models/` folder:
 
@@ -86,7 +86,7 @@ All domain models reside cleanly under the `VaultCode.Models` namespace in the `
 
 ---
 
-## 🚀 Quickstart Local Running Guide
+## Quickstart Local Running Guide
 
 ### Prerequisites
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or higher.
@@ -118,7 +118,7 @@ dotnet watch
 
 ---
 
-## 🎨 Visual & Design System Specifications
+## Visual & Design System Specifications
 - **Background**: Deep obsidian-to-navy gradient (`#060814` to `#0c1428`) with micro dot-grid overlay (`.cyber-grid`) and glowing radial ambient orbs (`.cyber-orb-cyan`, `.cyber-orb-violet`).
 - **Glass Surfaces**: Dark frosted acrylic cards (`rgba(15, 23, 42, 0.58)`, `backdrop-blur-md`, `border: 1px solid rgba(255, 255, 255, 0.12)`, `rounded-2xl`).
 - **Typography**: `DM Sans` for display headers and `Inter` for body readability. Monospace font for digital readouts.
