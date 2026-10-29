@@ -284,6 +284,142 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible, h4:focus-visible, h5:focus
 }
 
 /* ==========================================================================
+   Audio-Visual Drama: Perimeter Emergency Pulse & Glitch Penalty FX
+   ========================================================================== */
+
+/* 1. Perimeter Emergency Pulse Overlay */
+@keyframes perimeterPulse {
+    0%, 100% {
+        box-shadow: inset 0 0 35px rgba(244, 63, 94, 0.25);
+        opacity: 0.7;
+    }
+    14% {
+        box-shadow: inset 0 0 65px rgba(244, 63, 94, 0.5);
+        opacity: 1;
+    }
+    28% {
+        box-shadow: inset 0 0 45px rgba(244, 63, 94, 0.3);
+        opacity: 0.8;
+    }
+    42% {
+        box-shadow: inset 0 0 75px rgba(244, 63, 94, 0.55);
+        opacity: 1;
+    }
+    65% {
+        box-shadow: inset 0 0 35px rgba(244, 63, 94, 0.25);
+        opacity: 0.7;
+    }
+}
+
+@keyframes perimeterPulseUrgent {
+    0%, 100% {
+        box-shadow: inset 0 0 60px rgba(244, 63, 94, 0.5);
+        opacity: 0.8;
+    }
+    14% {
+        box-shadow: inset 0 0 100px rgba(244, 63, 94, 0.85);
+        opacity: 1;
+    }
+    28% {
+        box-shadow: inset 0 0 75px rgba(244, 63, 94, 0.6);
+        opacity: 0.9;
+    }
+    42% {
+        box-shadow: inset 0 0 120px rgba(244, 63, 94, 0.95);
+        opacity: 1;
+    }
+    65% {
+        box-shadow: inset 0 0 60px rgba(244, 63, 94, 0.5);
+        opacity: 0.8;
+    }
+}
+
+.critical-perimeter-vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    box-shadow: inset 0 0 60px rgba(244, 63, 94, 0.45);
+    animation: perimeterPulse 1.4s ease-in-out infinite;
+}
+
+.critical-perimeter-urgent {
+    box-shadow: inset 0 0 90px rgba(244, 63, 94, 0.75);
+    animation: perimeterPulseUrgent 0.8s ease-in-out infinite;
+}
+
+/* 2. Glitch Penalty FX */
+@keyframes glitchJitter {
+    0% {
+        transform: translate(0, 0);
+    }
+    15% {
+        transform: translate(-3px, 1px);
+        filter: drop-shadow(-2px 0 rgba(244, 63, 94, 0.7));
+    }
+    30% {
+        transform: translate(3px, -1px);
+        filter: drop-shadow(2px 0 rgba(56, 189, 248, 0.7));
+    }
+    45% {
+        transform: translate(-2px, -1px);
+        filter: drop-shadow(-1px 0 rgba(244, 63, 94, 0.5));
+    }
+    60% {
+        transform: translate(2px, 1px);
+        filter: drop-shadow(1px 0 rgba(56, 189, 248, 0.5));
+    }
+    75% {
+        transform: translate(-1px, 0);
+        filter: none;
+    }
+    100% {
+        transform: translate(0, 0);
+        filter: none;
+    }
+}
+
+.anim-glitch-jitter {
+    animation: glitchJitter 220ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@keyframes scanlineFlash {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.glitch-scanline-flash {
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch-scanline-flash::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(244, 63, 94, 0.25) 25%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(244, 63, 94, 0.25) 75%,
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    pointer-events: none;
+    animation: scanlineFlash 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
    Accessibility: prefers-reduced-motion
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -292,6 +428,27 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible, h4:focus-visible, h5:focus
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .critical-perimeter-vignette {
+        animation: none !important;
+        box-shadow: inset 0 0 45px rgba(244, 63, 94, 0.4) !important;
+    }
+
+    .critical-perimeter-urgent {
+        animation: none !important;
+        box-shadow: inset 0 0 65px rgba(244, 63, 94, 0.6) !important;
+    }
+
+    .anim-glitch-jitter {
+        animation: none !important;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .glitch-scanline-flash::after {
+        animation: none !important;
+        display: none !important;
     }
 }
 
