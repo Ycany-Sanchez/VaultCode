@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultCode — Screen 1: Home Landing Page</title>
+    <!-- Google Fonts: DM Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-base: #090b10;
+            --bg-surface: #10141d;
+            --bg-surface-elevated: #151a26;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+        }
+        body {
+            background-color: var(--bg-base);
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-display { font-family: 'DM Sans', sans-serif; }
+        .glass-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 0.875rem;
+        }
+        .glass-card-accent {
+            background: var(--bg-surface-elevated);
+            border: 1px solid rgba(244, 63, 94, 0.2);
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-[#090b10] text-slate-100 min-h-screen flex flex-col">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#0c0f16]">
+        <div class="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="1-home.html" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-400">
+                    <i class="fa-solid fa-vault text-base"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+                        VAULT<span class="text-rose-500">CODE</span>
+                    </span>
+                    <p class="text-[10px] text-slate-400 font-mono tracking-tight hidden sm:block">Code Breaker Minigame</p>
+                </div>
+            </a>
+
+            <!-- Navigation Sequence -->
+            <nav class="flex items-center gap-1 sm:gap-2 font-mono text-xs">
+                <a href="1-home.html" class="px-3 py-1.5 rounded-lg text-white bg-white/10 border border-white/10 font-bold">
+                    Home
+                </a>
+                <a href="2-login.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition">
+                    Sign In
+                </a>
+                <a href="3-terminal.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition">
+                    Terminal
+                </a>
+                <a href="4-recruit.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition">
+                    Recruit
+                </a>
+            </nav>
+
+            <!-- Right Side CTA -->
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-[#141924] border border-white/[0.08]">
+                    <div class="w-6 h-6 rounded-md bg-rose-500/20 text-rose-400 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-user-ninja"></i>
+                    </div>
+                    <div class="text-left font-mono">
+                        <p class="text-xs font-semibold text-white leading-none">Cipher_99</p>
+                        <span class="text-[10px] text-slate-400">Operative</span>
+                    </div>
+                </div>
+
+                <a href="3-terminal.html" class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 hover:bg-rose-500 text-white font-mono tracking-wider transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-play text-[11px]"></i>
+                    <span class="hidden sm:inline">PLAY</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div class="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 space-y-20">
+            <!-- HERO SECTION -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Hero Copy -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-mono tracking-wide">
+                        <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+                        <span>CODE BREAKER</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white leading-tight">
+                        CRACK THE VAULT. <br />
+                        <span class="text-rose-400">BEAT THE CLOCK.</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed">
+                        Test your deduction skills against the clock. You have <strong class="text-rose-400 font-bold">45 seconds</strong> and only <strong class="text-white font-bold">6 attempts</strong> to deduce the secret numeric passcode before permanent system lockout.
+                    </p>
+
+                    <!-- Flow Pipeline Pills -->
+                    <div class="flex items-center gap-2 font-mono text-xs text-slate-400 py-1 overflow-x-auto">
+                        <span class="px-2.5 py-1 rounded-md bg-white/10 text-white border border-white/15 font-bold flex items-center gap-1.5">
+                            <span>1. Home</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] text-slate-400"></i>
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10 flex items-center gap-1.5">
+                            <span>2. Sign In</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] text-slate-500"></i>
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10 flex items-center gap-1.5">
+                            <span>3. Terminal</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] text-slate-500"></i>
+                        </span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">
+                            <span>4. Recruit</span>
+                        </span>
+                    </div>
+
+                    <!-- Primary Call to Action -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="2-login.html" class="px-8 py-3.5 rounded-xl font-mono text-sm font-bold bg-rose-600 hover:bg-rose-500 text-white transition-all flex items-center gap-3">
+                            <i class="fa-solid fa-play text-base"></i>
+                            <span>START GAME</span>
+                        </a>
+
+                        <a href="3-terminal.html" class="px-6 py-3.5 rounded-xl font-mono text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-rose-400"></i>
+                            <span>Direct Play Demo</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Specs Badges -->
+                    <div class="pt-6 border-t border-white/[0.08] grid grid-cols-3 gap-4 font-mono text-xs text-slate-400">
+                        <div>
+                            <span class="block text-slate-500 text-[10px] uppercase">Countdown</span>
+                            <strong class="text-rose-400 text-sm font-bold">45s / 30s Window</strong>
+                        </div>
+                        <div>
+                            <span class="block text-slate-500 text-[10px] uppercase">Wrong Guess</span>
+                            <strong class="text-amber-400 text-sm font-bold">-3s Penalty</strong>
+                        </div>
+                        <div>
+                            <span class="block text-slate-500 text-[10px] uppercase">Clearance</span>
+                            <strong class="text-white text-sm font-bold">Operative & Mastermind</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Vault Preview Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-card-accent p-6 sm:p-8 space-y-6 border border-white/[0.1]">
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-2 h-2 rounded-full bg-rose-500"></div>
+                                <span class="font-mono text-xs text-white font-bold">VAULT PREVIEW</span>
+                            </div>
+                            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-400 border border-white/10">
+                                SAMPLE ROUND
+                            </span>
+                        </div>
+
+                        <!-- Simulated Code Tiles Preview -->
+                        <div class="space-y-3 py-2">
+                            <!-- Row 1: partial hit -->
+                            <div class="flex justify-center gap-2.5">
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-bold text-xl">4</div>
+                                <div class="w-12 h-14 rounded-lg bg-white/5 text-slate-500 border border-white/10 flex items-center justify-center font-bold text-xl">1</div>
+                                <div class="w-12 h-14 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/50 flex items-center justify-center font-bold text-xl">9</div>
+                                <div class="w-12 h-14 rounded-lg bg-white/5 text-slate-500 border border-white/10 flex items-center justify-center font-bold text-xl">0</div>
+                            </div>
+                            <!-- Row 2: closer hit -->
+                            <div class="flex justify-center gap-2.5">
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-bold text-xl">4</div>
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-bold text-xl">8</div>
+                                <div class="w-12 h-14 rounded-lg bg-white/5 text-slate-500 border border-white/10 flex items-center justify-center font-bold text-xl">3</div>
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-bold text-xl">9</div>
+                            </div>
+                            <!-- Row 3: breach solved -->
+                            <div class="flex justify-center gap-2.5">
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/25 text-emerald-300 border-2 border-emerald-400 flex items-center justify-center font-bold text-xl">4</div>
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/25 text-emerald-300 border-2 border-emerald-400 flex items-center justify-center font-bold text-xl">8</div>
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/25 text-emerald-300 border-2 border-emerald-400 flex items-center justify-center font-bold text-xl">2</div>
+                                <div class="w-12 h-14 rounded-lg bg-emerald-500/25 text-emerald-300 border-2 border-emerald-400 flex items-center justify-center font-bold text-xl">9</div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Clearance Badges -->
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <div class="p-3 rounded-xl bg-[#0c0f16] border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-shield text-rose-400 text-lg"></i>
+                                <div>
+                                    <p class="text-xs font-bold text-white leading-none">OPERATIVE</p>
+                                    <span class="text-[10px] text-slate-400 font-mono">4 Digits · 45s</span>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-[#0c0f16] border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-skull text-amber-400 text-lg"></i>
+                                <div>
+                                    <p class="text-xs font-bold text-white leading-none">MASTERMIND</p>
+                                    <span class="text-[10px] text-slate-400 font-mono">5 Digits · 30s Hard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: GAMEPLAY MECHANICS -->
+            <section class="space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-400">GAMEPLAY MECHANICS</span>
+                    <h2 class="text-3xl font-bold font-display text-white">How Color Feedback Works</h2>
+                    <p class="text-slate-400 text-sm">
+                        Every guess evaluates the status of each digit. Deduce the correct combination before the timer runs out.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Emerald Card -->
+                    <div class="glass-card p-6 space-y-4 border-white/[0.08]">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 flex items-center justify-center text-xl font-bold font-mono">
+                                7
+                            </div>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">CORRECT POSITION</span>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white">Green Tile</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The digit exists in the passcode and is placed in the <strong class="text-emerald-400">exact correct position</strong>. Keep this digit where it is.
+                        </p>
+                    </div>
+
+                    <!-- Amber Card -->
+                    <div class="glass-card p-6 space-y-4 border-white/[0.08]">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 flex items-center justify-center text-xl font-bold font-mono">
+                                3
+                            </div>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-400 border border-amber-500/30">MISPLACED DIGIT</span>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white">Amber Tile</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The digit is in the passcode, but belongs in a <strong class="text-amber-400">different position</strong>. Try moving it to another slot on your next attempt.
+                        </p>
+                    </div>
+
+                    <!-- Slate Card -->
+                    <div class="glass-card p-6 space-y-4 border-white/[0.08]">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-slate-500 flex items-center justify-center text-xl font-bold font-mono">
+                                0
+                            </div>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white/5 text-slate-400 border border-white/10">NOT IN CODE</span>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white">Dark Slate Tile</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The digit <strong class="text-slate-400">does not exist</strong> anywhere in the secret passcode. Eliminate it from your future guesses.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: SYSTEM FEATURES -->
+            <section class="glass-card-accent p-8 sm:p-12 space-y-8 border-white/[0.08]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 space-y-4">
+                        <span class="text-xs font-mono uppercase tracking-widest text-slate-400">CORE FEATURES</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold font-display text-white leading-snug">
+                            Designed for Speed & Strategic Deduction
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            VaultCode combines classic Mastermind logic with modern time pressure. Each wrong guess subtracts 3 seconds from your timer, creating an intense race against the countdown.
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Track your performance with dynamic clearance ranks, personal best scores, and comprehensive heist analytics.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-[#0c0f16] border border-white/[0.08] space-y-2">
+                            <div class="text-rose-400 text-xl"><i class="fa-solid fa-clock"></i></div>
+                            <h4 class="text-sm font-bold text-white">45s / 30s Countdown</h4>
+                            <p class="text-xs text-slate-400">Fast-paced timer with auditory warning pings in the final 10 seconds.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-[#0c0f16] border border-white/[0.08] space-y-2">
+                            <div class="text-amber-400 text-xl"><i class="fa-solid fa-bolt"></i></div>
+                            <h4 class="text-sm font-bold text-white">-3s Error Penalty</h4>
+                            <p class="text-xs text-slate-400">Incorrect deductions dock 3 seconds from your active timer.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-[#0c0f16] border border-white/[0.08] space-y-2">
+                            <div class="text-emerald-400 text-xl"><i class="fa-solid fa-chart-line"></i></div>
+                            <h4 class="text-sm font-bold text-white">Agent Statistics</h4>
+                            <p class="text-xs text-slate-400">Track total breaches, current win streak, and personal best high scores.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-[#0c0f16] border border-white/[0.08] space-y-2">
+                            <div class="text-rose-400 text-xl"><i class="fa-solid fa-ranking-star"></i></div>
+                            <h4 class="text-sm font-bold text-white">Rank Progression</h4>
+                            <p class="text-xs text-slate-400">Advance from Rookie Probe to Vault Phantom as you crack more vaults.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: CTA BANNER -->
+            <section class="text-center py-12 px-6 rounded-2xl bg-[#10141d] border border-white/[0.08] space-y-6">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 text-2xl">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="space-y-2 max-w-xl mx-auto">
+                    <h2 class="text-3xl font-bold font-display text-white">Test Your Cryptographic Skills</h2>
+                    <p class="text-slate-400 text-sm">
+                        Choose your difficulty level and enter the terminal to begin code deduction.
+                    </p>
+                </div>
+                <div class="pt-2 flex justify-center gap-4 flex-wrap">
+                    <a href="2-login.html" class="px-8 py-3.5 rounded-xl font-mono text-sm font-bold bg-rose-600 hover:bg-rose-500 text-white transition-all flex items-center gap-2.5">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <span>SIGN IN & PLAY</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="border-t border-white/[0.08] bg-[#0c0f16] py-5 text-center text-xs text-slate-400 font-mono">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fa-solid fa-terminal text-rose-500"></i>
+                <span class="tracking-wide">VaultCode — Midterms Application Development</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span class="text-slate-400">Blazor WebAssembly .NET 8.0</span>
+                <span>•</span>
+                <span class="text-emerald-400 flex items-center gap-1.5"><i class="fa-solid fa-circle text-[7px]"></i> System Online</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

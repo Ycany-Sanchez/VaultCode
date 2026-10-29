@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultCode — Screen 4: Agent Dossier Registration</title>
+    <!-- Google Fonts: DM Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-base: #090b10;
+            --bg-surface: #10141d;
+            --bg-surface-elevated: #151a26;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --color-rose: #f43f5e;
+        }
+        body {
+            background-color: var(--bg-base);
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-display { font-family: 'DM Sans', sans-serif; }
+        .glass-card-accent {
+            background: var(--bg-surface-elevated);
+            border: 1px solid rgba(244, 63, 94, 0.25);
+            border-radius: 1rem;
+        }
+        .glass-input {
+            background: #0c0f16;
+            border: 1px solid var(--border-subtle);
+            color: #f8fafc;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            border-color: var(--color-rose);
+            box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#090b10] text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#0c0f16]">
+        <div class="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="1-home.html" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-400">
+                    <i class="fa-solid fa-vault text-base"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+                        VAULT<span class="text-rose-500">CODE</span>
+                    </span>
+                    <p class="text-[10px] text-slate-400 font-mono tracking-tight hidden sm:block">Code Breaker Minigame</p>
+                </div>
+            </a>
+
+            <!-- Navigation Sequence -->
+            <nav class="flex items-center gap-1 sm:gap-2 font-mono text-xs">
+                <a href="1-home.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition">
+                    Home
+                </a>
+                <a href="2-login.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition">
+                    Sign In
+                </a>
+                <a href="3-terminal.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition">
+                    Terminal
+                </a>
+                <a href="4-recruit.html" class="px-3 py-1.5 rounded-lg text-white bg-white/10 border border-white/10 font-bold">
+                    Recruit
+                </a>
+            </nav>
+
+            <!-- Right Side CTA -->
+            <div class="flex items-center gap-3">
+                <a href="3-terminal.html" class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 hover:bg-rose-500 text-white font-mono tracking-wider transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-terminal text-[11px]"></i>
+                    <span>PLAY NOW</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Registration Dossier -->
+    <main class="flex-1 flex items-center justify-center px-4 py-10">
+        <div class="w-full max-w-xl glass-card-accent p-6 sm:p-10 space-y-7 border border-rose-500/25 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            
+            <!-- Header -->
+            <div class="text-center space-y-2">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-400 text-2xl shadow-[0_0_20px_rgba(244,63,94,0.25)]">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-bold font-display text-white">Agent Dossier Registration</h1>
+                <p class="text-xs sm:text-sm text-slate-400">Customize your player identity, avatar, and preferred clearance level.</p>
+            </div>
+
+            <!-- Form -->
+            <form action="3-terminal.html" method="get" class="space-y-5">
+                
+                <!-- Name Fields -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-mono uppercase tracking-wider text-slate-300">
+                            First Name
+                        </label>
+                        <input type="text" value="Alex" placeholder="e.g. Alex" required
+                               class="w-full px-4 py-2.5 rounded-xl glass-input text-sm font-sans placeholder:text-slate-600" />
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-mono uppercase tracking-wider text-slate-300">
+                            Last Name
+                        </label>
+                        <input type="text" value="Mercer" placeholder="e.g. Mercer" required
+                               class="w-full px-4 py-2.5 rounded-xl glass-input text-sm font-sans placeholder:text-slate-600" />
+                    </div>
+                </div>
+
+                <!-- Codename & Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-mono uppercase tracking-wider text-slate-300">
+                            <i class="fa-solid fa-signature text-rose-400 mr-1.5"></i>Agent Codename
+                        </label>
+                        <input type="text" value="Cipher_99" placeholder="e.g. Cipher_99" required
+                               class="w-full px-4 py-2.5 rounded-xl glass-input text-sm font-mono placeholder:text-slate-600" />
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-mono uppercase tracking-wider text-slate-300">
+                            <i class="fa-solid fa-envelope text-rose-400 mr-1.5"></i>Contact Email
+                        </label>
+                        <input type="email" value="agent@vaultcode.net" placeholder="agent@vaultcode.net" required
+                               class="w-full px-4 py-2.5 rounded-xl glass-input text-sm font-sans placeholder:text-slate-600" />
+                    </div>
+                </div>
+
+                <!-- Avatar Selection -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-mono uppercase tracking-wider text-slate-300">
+                        <i class="fa-solid fa-id-badge text-rose-400 mr-1.5"></i>Select Infiltrator Avatar
+                    </label>
+                    <div class="grid grid-cols-5 gap-2.5" id="avatarGrid">
+                        <!-- Ninja (Default Active) -->
+                        <button type="button" onclick="selectAvatar(this, 'fa-user-ninja')"
+                                class="avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-rose-500/25 border-rose-400 text-rose-300 shadow-[0_0_15px_rgba(244,63,94,0.3)]">
+                            <i class="fa-solid fa-user-ninja text-xl"></i>
+                            <span class="text-[9px] font-mono tracking-tight">Ninja</span>
+                        </button>
+                        <!-- Ghost -->
+                        <button type="button" onclick="selectAvatar(this, 'fa-user-secret')"
+                                class="avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200">
+                            <i class="fa-solid fa-user-secret text-xl"></i>
+                            <span class="text-[9px] font-mono tracking-tight">Ghost</span>
+                        </button>
+                        <!-- Synth -->
+                        <button type="button" onclick="selectAvatar(this, 'fa-robot')"
+                                class="avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200">
+                            <i class="fa-solid fa-robot text-xl"></i>
+                            <span class="text-[9px] font-mono tracking-tight">Synth</span>
+                        </button>
+                        <!-- Hacker -->
+                        <button type="button" onclick="selectAvatar(this, 'fa-terminal')"
+                                class="avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200">
+                            <i class="fa-solid fa-terminal text-xl"></i>
+                            <span class="text-[9px] font-mono tracking-tight">Hacker</span>
+                        </button>
+                        <!-- Cipher -->
+                        <button type="button" onclick="selectAvatar(this, 'fa-skull-crossbones')"
+                                class="avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200">
+                            <i class="fa-solid fa-skull-crossbones text-xl"></i>
+                            <span class="text-[9px] font-mono tracking-tight">Cipher</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Target Clearance Selection -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-mono uppercase tracking-wider text-slate-300">
+                        <i class="fa-solid fa-sliders text-rose-400 mr-1.5"></i>Default Difficulty
+                    </label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- Operative (Active) -->
+                        <button type="button" id="btnOperative" onclick="selectClearance('Operative')"
+                                class="clearance-btn p-3.5 rounded-xl border flex items-center justify-between transition-all bg-rose-500/20 border-rose-400 text-white shadow-[0_0_15px_rgba(244,63,94,0.25)]">
+                            <div class="text-left">
+                                <div class="text-sm font-bold font-display">Operative</div>
+                                <span class="text-[11px] text-slate-400">4-Digit Code · 45s</span>
+                            </div>
+                            <i class="fa-solid fa-shield text-rose-400 text-lg"></i>
+                        </button>
+
+                        <!-- Mastermind -->
+                        <button type="button" id="btnMastermind" onclick="selectClearance('Mastermind')"
+                                class="clearance-btn p-3.5 rounded-xl border flex items-center justify-between transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20">
+                            <div class="text-left">
+                                <div class="text-sm font-bold font-display text-slate-300">Mastermind</div>
+                                <span class="text-[11px] text-slate-400">5-Digit Code · 30s Hard</span>
+                            </div>
+                            <i class="fa-solid fa-skull text-slate-500 text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit"
+                        class="w-full py-3.5 rounded-xl font-mono text-sm font-bold bg-rose-600 hover:bg-rose-500 text-white transition-all flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(244,63,94,0.3)]">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span>SAVE PROFILE & LAUNCH GAME</span>
+                </button>
+            </form>
+
+            <!-- Back to Start link -->
+            <div class="pt-2 border-t border-rose-500/20 text-center text-xs text-slate-400">
+                <a href="1-home.html" class="text-rose-400 font-semibold hover:underline flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                    <span>Return to Home</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="border-t border-white/[0.08] bg-[#0c0f16] py-5 text-center text-xs text-slate-400 font-mono">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fa-solid fa-terminal text-rose-500"></i>
+                <span class="tracking-wide">VaultCode — Midterms Application Development</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span class="text-slate-400">Blazor WebAssembly .NET 8.0</span>
+                <span>•</span>
+                <span class="text-emerald-400 flex items-center gap-1.5"><i class="fa-solid fa-circle text-[7px]"></i> System Online</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Toggle Logic -->
+    <script>
+        function selectAvatar(btn, iconName) {
+            document.querySelectorAll('.avatar-option').forEach(el => {
+                el.className = 'avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200';
+            });
+            btn.className = 'avatar-option p-3 rounded-xl border flex flex-col items-center gap-1.5 transition-all bg-rose-500/25 border-rose-400 text-rose-300 shadow-[0_0_15px_rgba(244,63,94,0.3)]';
+        }
+
+        function selectClearance(level) {
+            const opBtn = document.getElementById('btnOperative');
+            const mmBtn = document.getElementById('btnMastermind');
+
+            if (level === 'Operative') {
+                opBtn.className = 'clearance-btn p-3.5 rounded-xl border flex items-center justify-between transition-all bg-rose-500/20 border-rose-400 text-white shadow-[0_0_15px_rgba(244,63,94,0.25)]';
+                opBtn.querySelector('i').className = 'fa-solid fa-shield text-rose-400 text-lg';
+                opBtn.querySelector('.font-display').className = 'text-sm font-bold font-display text-white';
+
+                mmBtn.className = 'clearance-btn p-3.5 rounded-xl border flex items-center justify-between transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20';
+                mmBtn.querySelector('i').className = 'fa-solid fa-skull text-slate-500 text-lg';
+                mmBtn.querySelector('.font-display').className = 'text-sm font-bold font-display text-slate-300';
+            } else {
+                opBtn.className = 'clearance-btn p-3.5 rounded-xl border flex items-center justify-between transition-all bg-black/50 border-white/10 text-slate-400 hover:border-white/20';
+                opBtn.querySelector('i').className = 'fa-solid fa-shield text-slate-500 text-lg';
+                opBtn.querySelector('.font-display').className = 'text-sm font-bold font-display text-slate-300';
+
+                mmBtn.className = 'clearance-btn p-3.5 rounded-xl border flex items-center justify-between transition-all bg-amber-500/20 border-amber-400 text-white shadow-[0_0_15px_rgba(245,158,11,0.25)]';
+                mmBtn.querySelector('i').className = 'fa-solid fa-skull text-amber-400 text-lg';
+                mmBtn.querySelector('.font-display').className = 'text-sm font-bold font-display text-white';
+            }
+        }
+    </script>
+</body>
+</html>

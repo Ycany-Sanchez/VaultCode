@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultCode — Figma Screen Package Hub</title>
+    <!-- Google Fonts: DM Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-base: #090b10;
+            --bg-surface: #10141d;
+            --bg-surface-elevated: #151a26;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --color-rose: #f43f5e;
+        }
+        body {
+            background-color: var(--bg-base);
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-display { font-family: 'DM Sans', sans-serif; }
+        .glass-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 1rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(244, 63, 94, 0.35);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-[#090b10] text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Header -->
+    <header class="border-b border-white/[0.08] bg-[#0c0f16]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-400">
+                    <i class="fa-solid fa-vault text-base"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+                        VAULT<span class="text-rose-500">CODE</span>
+                    </span>
+                    <p class="text-[10px] text-slate-400 font-mono tracking-tight">Figma Design System Package</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs font-mono">
+                <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center gap-1.5">
+                    <i class="fa-solid fa-check text-[9px]"></i> 4 Plain HTML Screens Ready
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 space-y-10">
+
+        <!-- Banner Intro -->
+        <div class="text-center space-y-3 max-w-2xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white">
+                Figma Screen Export Hub
+            </h1>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                Clean, standalone, plain HTML files matching the exact design and functionality of the VaultCode application. Ready to open directly in your browser or import into Figma using plugins.
+            </p>
+        </div>
+
+        <!-- 4 Screen Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Screen 1: Home Landing -->
+            <a href="1-home.html" class="glass-card p-6 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono uppercase tracking-wider text-rose-400 font-bold bg-rose-500/10 border border-rose-500/25 px-2.5 py-0.5 rounded-full">
+                            Screen 01
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">Pages/Index.razor</span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h2 class="text-xl font-bold font-display text-white group-hover:text-rose-400 transition">
+                            Home / Landing Page
+                        </h2>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Hero showcase, quick launch buttons, deduction matrix preview with evaluated tiles, gameplay mechanics breakdown, and core tactical features.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 pt-2">
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Hero Section</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Interactive Preview</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Rules Matrix</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-rose-300">
+                    <span>Open 1-home.html</span>
+                    <i class="fa-solid fa-arrow-right text-[11px] transform group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+            <!-- Screen 2: Login / Sign In -->
+            <a href="2-login.html" class="glass-card p-6 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono uppercase tracking-wider text-rose-400 font-bold bg-rose-500/10 border border-rose-500/25 px-2.5 py-0.5 rounded-full">
+                            Screen 02
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">Pages/Login.razor</span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h2 class="text-xl font-bold font-display text-white group-hover:text-rose-400 transition">
+                            Agent Sign-In & Clearance
+                        </h2>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Authorization terminal featuring Operative (4-digit, 45s) vs Mastermind (5-digit, 30s) clearance toggles, codename credentials, and guest play bypass.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 pt-2">
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">45s / 30s Toggles</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Codename Form</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Guest Bypass</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-rose-300">
+                    <span>Open 2-login.html</span>
+                    <i class="fa-solid fa-arrow-right text-[11px] transform group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+            <!-- Screen 3: Terminal Cockpit -->
+            <a href="3-terminal.html" class="glass-card p-6 flex flex-col justify-between group border-rose-500/25">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full">
+                            Screen 03 · Core Game
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">Pages/Terminal.razor</span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h2 class="text-xl font-bold font-display text-white group-hover:text-rose-400 transition">
+                            Vault Terminal Cockpit
+                        </h2>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Comprehensive game interface: 6-row deduction matrix, animated timer, real-time tactical keypad with feedback states, tested digits tracker, and agent profile stats.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 pt-2">
+                        <span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">6-Row Matrix</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Tactical Keypad</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Tested Digits Strip</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Agent Dossier</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-rose-300">
+                    <span>Open 3-terminal.html</span>
+                    <i class="fa-solid fa-arrow-right text-[11px] transform group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+            <!-- Screen 4: Recruit / Signup -->
+            <a href="4-recruit.html" class="glass-card p-6 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-mono uppercase tracking-wider text-rose-400 font-bold bg-rose-500/10 border border-rose-500/25 px-2.5 py-0.5 rounded-full">
+                            Screen 04
+                        </span>
+                        <span class="text-xs text-slate-500 font-mono">Pages/Signup.razor</span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h2 class="text-xl font-bold font-display text-white group-hover:text-rose-400 transition">
+                            Agent Dossier Registration
+                        </h2>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Full player customization: 5 infiltrator avatar badges (Ninja, Ghost, Synth, Hacker, Cipher), personal credentials, and clearance mode preset.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 pt-2">
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">5 Avatar Badges</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Personal Fields</span>
+                        <span class="px-2 py-1 rounded bg-white/5 border border-white/5">Difficulty Selector</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-rose-300">
+                    <span>Open 4-recruit.html</span>
+                    <i class="fa-solid fa-arrow-right text-[11px] transform group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- How to Import into Figma Section -->
+        <div class="glass-card p-6 sm:p-8 space-y-4 border border-rose-500/20 bg-[#121622]">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                    <i class="fa-brands fa-figma"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold font-display text-white">How to Import into Figma in 1-Click</h3>
+                    <p class="text-xs text-slate-400">Convert these HTML files into editable vector frames in Figma.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs font-mono text-slate-300">
+                <div class="p-3.5 rounded-lg bg-black/40 border border-white/10 space-y-1.5">
+                    <div class="text-rose-400 font-bold">Method A: html.to.design Plugin</div>
+                    <p class="text-slate-400 font-sans text-xs">In Figma, run the plugin <strong>html.to.design</strong>. Choose "Import from raw HTML / Local file", and select the <code>.html</code> file. It generates auto-layout vector frames instantly.</p>
+                </div>
+
+                <div class="p-3.5 rounded-lg bg-black/40 border border-white/10 space-y-1.5">
+                    <div class="text-rose-400 font-bold">Method B: Local Live Server URL</div>
+                    <p class="text-slate-400 font-sans text-xs">Run a quick local server (or open with VS Code Live Server), then paste the URL (e.g. <code>http://localhost:5500/figma-screens/1-home.html</code>) directly into <strong>html.to.design</strong>.</p>
+                </div>
+
+                <div class="p-3.5 rounded-lg bg-black/40 border border-white/10 space-y-1.5">
+                    <div class="text-rose-400 font-bold">Method C: Builder.io Plugin</div>
+                    <p class="text-slate-400 font-sans text-xs">Open the Figma plugin <strong>Visual Copilot / HTML to Figma by Builder.io</strong>, paste the HTML code snippet directly into the plugin window, and click "Import to Canvas".</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="border-t border-white/[0.08] bg-[#0c0f16] py-5 text-center text-xs text-slate-400 font-mono">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fa-solid fa-terminal text-rose-500"></i>
+                <span class="tracking-wide">VaultCode — Midterms Application Development</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span class="text-slate-400">Figma Design Export Kit</span>
+                <span>•</span>
+                <span class="text-emerald-400 flex items-center gap-1.5"><i class="fa-solid fa-circle text-[7px]"></i> 4/4 Screens Verified</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
