@@ -115,11 +115,3 @@ To test UI or code changes with automatic re-compilation:
 ```bash
 dotnet watch
 ```
-
----
-
-## Visual & Design System Specifications
-- **Background**: Deep obsidian-to-navy gradient (`#060814` to `#0c1428`) with micro dot-grid overlay (`.cyber-grid`) and glowing radial ambient orbs (`.cyber-orb-cyan`, `.cyber-orb-violet`).
-- **Glass Surfaces**: Dark frosted acrylic cards (`rgba(15, 23, 42, 0.58)`, `backdrop-blur-md`, `border: 1px solid rgba(255, 255, 255, 0.12)`, `rounded-2xl`).
-- **Typography**: `DM Sans` for display headers and `Inter` for body readability. Monospace font for digital readouts.
-- **Interactivity**: `.card-lift` hover physics, `.anim-fade-up`, `.anim-float`, and `.anim-glow` CSS keyframes.
