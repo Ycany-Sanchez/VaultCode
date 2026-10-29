@@ -12,7 +12,7 @@
 }
 
 <!-- Focusable wrapper to capture physical keyboard strokes -->
-<div class="max-w-[1500px] mx-auto px-3 sm:px-5 lg:px-6 py-4 space-y-4 outline-none relative z-10" tabindex="0" @onkeydown="HandleKeyDown">
+<div class="max-w-[1500px] mx-auto px-3 sm:px-5 lg:px-6 py-4 space-y-4 outline-none relative z-10 @(isShaking ? "anim-glitch-jitter" : "")" tabindex="0" @onkeydown="HandleKeyDown">
     
     <!-- TOP BREACH COMMAND BAR -->
     <header class="glass-card p-3 sm:p-4 relative overflow-hidden transition-all duration-300 @(secondsRemaining <= 10 && !GameState.ActiveGame.IsGameOver ? "anim-danger-pulse border-rose-500/80" : "border-rose-500/20")">

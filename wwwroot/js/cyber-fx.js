@@ -43,11 +43,13 @@
                     canvas.style.position = 'fixed';
                     canvas.style.top = '0';
                     canvas.style.left = '0';
+                    canvas.style.right = '0';
+                    canvas.style.bottom = '0';
                     canvas.style.width = '100vw';
                     canvas.style.height = '100vh';
                     canvas.style.pointerEvents = 'none';
                     canvas.style.zIndex = '99999';
-                    document.body.appendChild(canvas);
+                    document.documentElement.appendChild(canvas);
                     dynamicCanvas = true;
                 }
             }
@@ -231,42 +233,45 @@
                 overlay.style.position = 'fixed';
                 overlay.style.top = '0';
                 overlay.style.left = '0';
+                overlay.style.right = '0';
+                overlay.style.bottom = '0';
                 overlay.style.width = '100vw';
                 overlay.style.height = '100vh';
                 overlay.style.pointerEvents = 'none';
                 overlay.style.zIndex = '99998';
-                overlay.style.backgroundImage = 'repeating-linear-gradient(0deg, rgba(239, 68, 68, 0.22) 0px, rgba(239, 68, 68, 0.22) 2px, rgba(0, 0, 0, 0.35) 2px, rgba(0, 0, 0, 0.35) 4px)';
-                overlay.style.boxShadow = 'inset 0 0 100px rgba(239, 68, 68, 0.45)';
+                overlay.style.backgroundImage = 'repeating-linear-gradient(0deg, rgba(239, 68, 68, 0.28) 0px, rgba(239, 68, 68, 0.28) 2px, rgba(0, 0, 0, 0.4) 2px, rgba(0, 0, 0, 0.4) 4px)';
+                overlay.style.boxShadow = 'inset 0 0 120px rgba(239, 68, 68, 0.6)';
                 overlay.style.mixBlendMode = 'screen';
-                document.body.appendChild(overlay);
+                document.documentElement.appendChild(overlay);
             }
 
             overlay.style.display = 'block';
             overlay.style.opacity = '1';
 
-            // Jitter sequence over 200ms
-            const originalTransform = document.body.style.transform;
+            // Jitter #app or the main terminal container so body remains clean for fixed viewport overlays at any scroll position
+            const target = document.getElementById('app') || document.body;
+            const originalTransform = target.style.transform;
             const offsets = [
-                { t: 0, x: -4, y: 2 },
-                { t: 40, x: 5, y: -3 },
-                { t: 85, x: -3, y: -2 },
-                { t: 135, x: 3, y: 2 },
-                { t: 175, x: -1, y: 1 }
+                { t: 0, x: -6, y: 3 },
+                { t: 40, x: 7, y: -4 },
+                { t: 85, x: -5, y: -2 },
+                { t: 135, x: 4, y: 3 },
+                { t: 175, x: -2, y: 1 }
             ];
 
             offsets.forEach(step => {
                 setTimeout(() => {
-                    document.body.style.transform = `translate(${step.x}px, ${step.y}px)`;
+                    target.style.transform = `translate(${step.x}px, ${step.y}px)`;
                 }, step.t);
             });
 
             this._glitchTimeout = setTimeout(() => {
-                document.body.style.transform = originalTransform || '';
+                target.style.transform = originalTransform || '';
                 if (overlay) {
                     overlay.style.display = 'none';
                 }
                 this._glitchTimeout = null;
-            }, 200);
+            }, 220);
 
             try {
                 window.dispatchEvent(new CustomEvent('cyber-glitch-flash'));
