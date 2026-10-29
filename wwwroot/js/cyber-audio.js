@@ -1,5 +1,5 @@
 // ==========================================================================
-// VAULTCODE — Synthetic Cyberpunk Web Audio Engine (Zero Asset Dependency)
+// VAULTCODE — Synthetic Web Audio Engine (Zero Asset Dependency)
 // ==========================================================================
 
 window.CyberAudio = {

@@ -5,9 +5,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x_CDN-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Font Awesome](https://img.shields.io/badge/Font_Awesome-6.5-10b981?style=flat-square&logo=font-awesome)](https://fontawesome.com/)
 [![Build Status](https://img.shields.io/badge/Build-0_Errors_0_Warnings-emerald?style=flat-square)]()
-[![Theme](https://img.shields.io/badge/Theme-Cyberpunk_Glassmorphism-8b5cf6?style=flat-square)]()
+[![Theme](https://img.shields.io/badge/Theme-Dark_Glassmorphism-8b5cf6?style=flat-square)]()
 
-**VaultCode** is a high-stakes, singleplayer cyberpunk vault-cracking code breaker minigame developed with **Blazor WebAssembly (.NET 8.0)** and styled using an immersive **dark glassmorphism** aesthetic powered by Tailwind CSS.
+**VaultCode** is a high-stakes, singleplayer vault-cracking code breaker minigame developed with **Blazor WebAssembly (.NET 8.0)** and styled using an immersive **dark glassmorphism** aesthetic powered by Tailwind CSS.
 
 Infiltrate Neo-Veridia Megabank's encrypted cold storage mainframe. Deduce the randomly generated biometric cipher using quantum feedback analysis before security countermeasures trigger complete lockout.
 

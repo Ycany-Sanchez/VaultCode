@@ -30,10 +30,15 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Headings font */
+/* Headings font & focus outline suppression */
 h1, h2, h3, h4, h5, h6, .font-display {
     font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     letter-spacing: -0.02em;
+}
+
+h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus,
+h1:focus-visible, h2:focus-visible, h3:focus-visible, h4:focus-visible, h5:focus-visible, h6:focus-visible {
+    outline: none !important;
 }
 
 /* Monospace font for digital readouts */
